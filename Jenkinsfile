@@ -1,7 +1,7 @@
 pipeline{
     agent any
         environment{
-            EC2_HOST = "13.232.1.154"
+            EC2_HOST = "35.154.208.88"
             SSH_CREDENTIAL_ID = "ubuntu"
             REMOTE_USER = "ubuntu"
             REMOTE_PATH = "/home/ubuntu/app"
@@ -31,7 +31,7 @@ pipeline{
                     rm -rf ${WEB_ROOT}/*
                     sudo cp -r ${REMOTE_PATH}/* ${WEB_ROOT}/
                     sudo systemctl restart ${SERVER}
-                ""
+                """
             }
 
         }
