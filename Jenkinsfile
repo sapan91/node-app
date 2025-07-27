@@ -10,11 +10,13 @@ pipeline{
         }
         stages{
             stage("Build"){
+                steps {
             echo "Installing Dependencies"
             sh "npm install"
             echo "Building the app"
             sh "npm run build"
             echo "Build complete"
+                }
             }
         
         stage("Deploy"){
